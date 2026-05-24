@@ -1,17 +1,306 @@
-<h1>SpalshWare Terms of Service</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<p>By using SpalshWare, you agree to these terms.</p>
+<title>SpalshWare • Privacy Policy</title>
 
-<h2>Usage</h2>
-<p>SpalshWare is intended for Discord server management purposes only.</p>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<h2>Restrictions</h2>
-<p>Abuse, spam, raids, or Discord ToS violations are prohibited.</p>
+<style>
 
-<h2>Data</h2>
-<p>The bot may store server settings, economy data, levels, moderation logs, and ticket data.</p>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-<h2>Termination</h2>
-<p>Servers violating the rules may lose access to the bot.</p>
+body{
+  font-family:'Inter',sans-serif;
+  background:#0b0f1a;
+  overflow-x:hidden;
+  color:white;
+}
 
-<p>Developer: SpalshWare</p>
+/* Animated Background */
+
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  overflow:hidden;
+}
+
+.circle{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.35;
+  animation:float 12s infinite ease-in-out;
+}
+
+.circle:nth-child(1){
+  width:350px;
+  height:350px;
+  background:#5865F2;
+  top:-100px;
+  left:-100px;
+}
+
+.circle:nth-child(2){
+  width:300px;
+  height:300px;
+  background:#8b5cf6;
+  bottom:-100px;
+  right:-50px;
+  animation-delay:3s;
+}
+
+.circle:nth-child(3){
+  width:250px;
+  height:250px;
+  background:#00d4ff;
+  top:40%;
+  left:60%;
+  animation-delay:6s;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(0px) translateX(0px);
+  }
+  50%{
+    transform:translateY(-40px) translateX(20px);
+  }
+  100%{
+    transform:translateY(0px) translateX(0px);
+  }
+}
+
+/* Main */
+
+.container{
+  width:100%;
+  max-width:1000px;
+  margin:auto;
+  padding:60px 25px;
+}
+
+.card{
+  background:rgba(22,27,34,.75);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  border-radius:30px;
+  padding:50px;
+  box-shadow:
+    0 0 50px rgba(0,0,0,.4),
+    inset 0 0 1px rgba(255,255,255,.2);
+
+  animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#5865F2,#8b5cf6);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:25px;
+  box-shadow:0 0 25px rgba(88,101,242,.4);
+}
+
+.logo{
+  font-size:58px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:15px;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #a5b4fc,
+    #c084fc
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+  color:#9ca3af;
+  margin-bottom:45px;
+  font-size:17px;
+}
+
+.section{
+  margin-bottom:35px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,.03);
+  transition:.3s;
+  border:1px solid transparent;
+}
+
+.section:hover{
+  transform:translateY(-4px);
+  border-color:rgba(139,92,246,.4);
+  background:rgba(255,255,255,.05);
+}
+
+.section h2{
+  color:#8b5cf6;
+  margin-bottom:12px;
+  font-size:24px;
+}
+
+.section p,
+.section li{
+  color:#d1d5db;
+  line-height:1.8;
+}
+
+.section ul{
+  padding-left:22px;
+}
+
+.footer{
+  margin-top:45px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:#9ca3af;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.button{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(90deg,#5865F2,#8b5cf6);
+  transition:.3s;
+  font-weight:600;
+  box-shadow:0 0 25px rgba(88,101,242,.35);
+}
+
+.button:hover{
+  transform:scale(1.05);
+}
+
+@media(max-width:700px){
+
+  .card{
+    padding:30px;
+  }
+
+  .logo{
+    font-size:42px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</div>
+
+<div class="container">
+
+  <div class="card">
+
+    <div class="badge">
+      🔒 SpalshWare Official
+    </div>
+
+    <div class="logo">
+      Privacy Policy
+    </div>
+
+    <div class="subtitle">
+      Your privacy matters • Last Updated 2026
+    </div>
+
+    <div class="section">
+      <h2>1. Collected Data</h2>
+
+      <p>
+        SpalshWare may collect user IDs, server IDs,
+        economy data, XP progress, moderation logs,
+        and ticket information for system functionality.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>2. Data Usage</h2>
+
+      <p>
+        Collected data is only used to provide
+        Discord bot services and improve user experience.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>3. Data Protection</h2>
+
+      <p>
+        All stored data is protected and never sold
+        or shared with third parties.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>4. Data Removal</h2>
+
+      <p>
+        Users or server owners may request data deletion
+        by removing the bot from their server.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>5. Discord Compliance</h2>
+
+      <p>
+        SpalshWare follows Discord Developer Terms
+        and Discord Privacy Policy guidelines.
+      </p>
+    </div>
+
+    <a class="button" href="https://bit.ly/4tMgcWp">
+      ➕ Invite SpalshWare
+    </a>
+
+    <div class="footer">
+      <span>© 2026 SpalshWare</span>
+      <span>Secure • Modern • Reliable</span>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
