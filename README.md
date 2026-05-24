@@ -1,13 +1,14 @@
+````md
 <div align="center">
 
 <img width="140" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
 
-# SpalshWare
+# 🤖 SpalshWare
 
 ### Modern Discord Community Management Bot
 
 <p>
-  Moderation • Economy • Music • Tickets • Security • Automation
+Moderation • Economy • Music • Tickets • Security • Automation
 </p>
 
 <br>
@@ -17,7 +18,7 @@
 </a>
 
 <a href="https://keremsg.github.io/spalshware-site/privacy.html">
-  <img src="https://img.shields.io/badge/Privacy%20Policy-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Privacy%20Policy-0d1117?style=for-the-badge">
 </a>
 
 <a href="https://keremsg.github.io/spalshware-site/terms.html">
@@ -32,19 +33,19 @@
 
 ---
 
-# Features
+# ✨ Features
 
 ## 🛡️ Moderation
 - Ban / Kick / Timeout / Warn
 - Anti Spam & Anti Raid
-- Advanced Logging
+- Advanced Logging System
 - Auto Moderation
 
 ## 💰 Economy
 - Daily Rewards
 - Gambling Games
 - Shop System
-- Inventory System
+- User Inventory
 
 ## 🎵 Music
 - Spotify Support
@@ -66,7 +67,7 @@
 
 ---
 
-# Tech Stack
+# ⚡ Tech Stack
 
 ```bash
 discord.js v14
@@ -74,3 +75,40 @@ Node.js
 better-sqlite3
 discord-player
 SQLite
+````
+
+---
+
+# 🚀 Setup
+
+```bash
+git clone https://github.com/Keremsg/spalshware-site.git
+
+cd spalshware-site
+
+npm install
+```
+
+Create `.env`
+
+```env
+TOKEN=YOUR_TOKEN
+CLIENT_ID=YOUR_CLIENT_ID
+```
+
+Start Bot
+
+```bash
+node .
+```
+
+---
+
+<div align="center">
+
+## 🌌 SpalshWare © 2026
+
+Professional • Fast • Secure
+
+</div>
+```
