@@ -74,25 +74,3 @@ Node.js
 better-sqlite3
 discord-player
 SQLite
-
-Setup
-git clone https://github.com/Keremsg/spalshware-site.git
-
-cd spalshware-site
-
-npm install
-
-Create .env
-
-TOKEN=YOUR_TOKEN
-CLIENT_ID=YOUR_CLIENT_ID
-
-Start Bot
-
-node .
-<div align="center">
-🌌 SpalshWare © 2026
-
-Professional • Fast • Secure
-
-</div> ```
