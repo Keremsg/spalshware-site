@@ -1,344 +1,560 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>SpalshWare</title>
+<title>SpalshWare • Discord Bot</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:'Inter',sans-serif;
-  background:#0b1020;
-  overflow-x:hidden;
-  color:white;
+font-family:'Inter',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
 /* Animated Background */
 
 .bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  z-index:-2;
-  overflow:hidden;
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-5;
 }
 
-.glow{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(120px);
-  opacity:.35;
-  animation:move 14s infinite ease-in-out;
+.blob{
+position:absolute;
+border-radius:50%;
+filter:blur(130px);
+opacity:.35;
+animation:float 12s infinite ease-in-out;
 }
 
-.glow:nth-child(1){
-  width:400px;
-  height:400px;
-  background:#5865F2;
-  top:-120px;
-  left:-120px;
+.blob:nth-child(1){
+width:450px;
+height:450px;
+background:#5865F2;
+top:-120px;
+left:-120px;
 }
 
-.glow:nth-child(2){
-  width:350px;
-  height:350px;
-  background:#8b5cf6;
-  bottom:-120px;
-  right:-120px;
-  animation-delay:3s;
+.blob:nth-child(2){
+width:350px;
+height:350px;
+background:#8b5cf6;
+right:-100px;
+bottom:-120px;
+animation-delay:3s;
 }
 
-.glow:nth-child(3){
-  width:250px;
-  height:250px;
-  background:#00d4ff;
-  top:40%;
-  left:60%;
-  animation-delay:6s;
+.blob:nth-child(3){
+width:300px;
+height:300px;
+background:#00d4ff;
+top:45%;
+left:55%;
+animation-delay:6s;
 }
 
-@keyframes move{
-  0%{
-    transform:translate(0,0);
-  }
-  50%{
-    transform:translate(30px,-40px);
-  }
-  100%{
-    transform:translate(0,0);
-  }
+@keyframes float{
+0%{
+transform:translate(0,0);
+}
+50%{
+transform:translate(35px,-45px);
+}
+100%{
+transform:translate(0,0);
+}
 }
 
-/* Main */
+/* Navbar */
 
-.container{
-  width:100%;
-  max-width:1200px;
-  margin:auto;
-  padding:80px 25px;
+nav{
+width:100%;
+padding:25px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+
+background:rgba(5,8,22,.55);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.05);
 }
+
+.logo{
+font-size:28px;
+font-weight:800;
+
+background:linear-gradient(90deg,#fff,#a5b4fc,#c084fc);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:#cbd5e1;
+text-decoration:none;
+transition:.3s;
+font-weight:500;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+/* Hero */
 
 .hero{
-  text-align:center;
-  padding:100px 20px;
-  border-radius:35px;
-
-  background:rgba(22,27,34,.7);
-  border:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(25px);
-
-  box-shadow:
-    0 0 50px rgba(0,0,0,.4),
-    inset 0 0 1px rgba(255,255,255,.2);
-
-  animation:fadeIn 1.2s ease;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:160px 8% 100px;
+position:relative;
 }
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.hero-content{
+max-width:1300px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
 }
 
-.badge{
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:999px;
-  background:linear-gradient(90deg,#5865F2,#8b5cf6);
-  font-size:14px;
-  font-weight:600;
-  margin-bottom:25px;
-  box-shadow:0 0 25px rgba(88,101,242,.4);
+.left h1{
+font-size:92px;
+line-height:1;
+font-weight:800;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#a5b4fc,
+#c084fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:25px;
 }
 
-.title{
-  font-size:80px;
-  font-weight:800;
-  line-height:1;
-
-  background:linear-gradient(
-    90deg,
-    #ffffff,
-    #a5b4fc,
-    #c084fc
-  );
-
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  margin-bottom:25px;
-}
-
-.subtitle{
-  max-width:750px;
-  margin:auto;
-  color:#9ca3af;
-  font-size:20px;
-  line-height:1.8;
+.left p{
+font-size:20px;
+line-height:1.9;
+color:#9ca3af;
+max-width:650px;
 }
 
 .buttons{
-  margin-top:40px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
+display:flex;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
 }
 
 .btn{
-  padding:16px 28px;
-  border-radius:16px;
-  text-decoration:none;
-  color:white;
-  font-weight:600;
-  transition:.3s;
+padding:16px 30px;
+border-radius:18px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+display:inline-block;
 }
 
-.btn-primary{
-  background:linear-gradient(90deg,#5865F2,#8b5cf6);
-  box-shadow:0 0 25px rgba(88,101,242,.4);
+.primary{
+background:linear-gradient(90deg,#5865F2,#8b5cf6);
+color:white;
+box-shadow:0 0 35px rgba(88,101,242,.45);
 }
 
-.btn-secondary{
-  border:1px solid rgba(255,255,255,.1);
-  background:rgba(255,255,255,.04);
+.secondary{
+border:1px solid rgba(255,255,255,.08);
+background:rgba(255,255,255,.03);
+color:white;
 }
 
 .btn:hover{
-  transform:translateY(-4px) scale(1.03);
+transform:translateY(-5px) scale(1.03);
+}
+
+/* Right Card */
+
+.preview{
+background:rgba(17,25,40,.78);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+padding:35px;
+backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 50px rgba(0,0,0,.45),
+inset 0 0 1px rgba(255,255,255,.2);
+
+animation:fade 1.2s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.command{
+background:#0f172a;
+border-radius:18px;
+padding:18px 22px;
+margin-bottom:18px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.command:hover{
+transform:translateX(5px);
+border-color:#8b5cf6;
+}
+
+.command h3{
+font-size:18px;
+margin-bottom:8px;
+color:#c4b5fd;
+}
+
+.command p{
+color:#94a3b8;
+line-height:1.7;
+}
+
+/* Stats */
+
+.stats{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.stat{
+background:#0f172a;
+padding:20px;
+border-radius:18px;
+text-align:center;
+}
+
+.stat h2{
+font-size:30px;
+margin-bottom:5px;
+}
+
+.stat span{
+color:#94a3b8;
 }
 
 /* Features */
 
+.section{
+padding:120px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:58px;
+margin-bottom:15px;
+}
+
+.section-title p{
+color:#9ca3af;
+font-size:18px;
+}
+
 .features{
-  margin-top:70px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
-.card{
-  background:rgba(22,27,34,.7);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:25px;
-  padding:30px;
-  transition:.3s;
-  backdrop-filter:blur(20px);
+.feature{
+padding:35px;
+border-radius:28px;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
+transition:.3s;
 }
 
-.card:hover{
-  transform:translateY(-8px);
-  border-color:#8b5cf6;
+.feature:hover{
+transform:translateY(-8px);
+border-color:#8b5cf6;
 }
 
-.card h3{
-  font-size:24px;
-  margin-bottom:12px;
+.feature h3{
+font-size:25px;
+margin-bottom:15px;
 }
 
-.card p{
-  color:#9ca3af;
-  line-height:1.7;
+.feature p{
+color:#9ca3af;
+line-height:1.8;
 }
 
 /* Footer */
 
-.footer{
-  margin-top:70px;
-  text-align:center;
-  color:#6b7280;
-  font-size:15px;
+footer{
+padding:40px;
+text-align:center;
+color:#64748b;
+border-top:1px solid rgba(255,255,255,.05);
 }
 
-@media(max-width:800px){
+/* Responsive */
 
-  .title{
-    font-size:55px;
-  }
+@media(max-width:1100px){
 
-  .subtitle{
-    font-size:17px;
-  }
+.hero-content{
+grid-template-columns:1fr;
+}
+
+.left h1{
+font-size:70px;
+}
+
+}
+
+@media(max-width:700px){
+
+.left h1{
+font-size:50px;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+nav{
+padding:20px 6%;
+}
+
+.hero{
+padding:140px 6% 80px;
+}
+
+.section{
+padding:90px 6%;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
 
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="bg">
-  <div class="glow"></div>
-  <div class="glow"></div>
-  <div class="glow"></div>
+<div class="blob"></div>
+<div class="blob"></div>
+<div class="blob"></div>
 </div>
 
-<div class="container">
+<nav>
 
-  <div class="hero">
+<div class="logo">
+SpalshWare
+</div>
 
-    <div class="badge">
-      🤖 Professional Discord Bot
-    </div>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="https://keremsg.github.io/spalshware-site/terms.html">Terms</a>
+<a href="https://keremsg.github.io/spalshware-site/privacy.html">Privacy</a>
+</div>
 
-    <div class="title">
-      SpalshWare
-    </div>
+</nav>
 
-    <div class="subtitle">
-      Modern Discord community management bot with
-      moderation, economy, music, ticket systems,
-      security, automation and entertainment features
-      all in one powerful platform.
-    </div>
+<section class="hero">
 
-    <div class="buttons">
+<div class="hero-content">
 
-      <a class="btn btn-primary"
-      href="https://bit.ly/4tMgcWp">
+<div class="left">
 
-        ➕ Invite Bot
+<h1>
+Modern Discord Bot
+</h1>
 
-      </a>
+<p>
+SpalshWare is an advanced Discord community management bot featuring moderation, economy, ticket systems, music, automation and powerful security tools — all in one modern platform.
+</p>
 
-      <a class="btn btn-secondary"
-      href="https://keremsg.github.io/spalshware-site/terms.html">
+<div class="buttons">
 
-        📜 Terms
+<a class="btn primary"
+href="https://bit.ly/4tMgcWp">
+➕ Invite Bot
+</a>
 
-      </a>
-
-      <a class="btn btn-secondary"
-        href="https://keremsg.github.io/spalshware-site/privacy.html">
-
-        🔒 Privacy
-
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="features">
-
-    <div class="card">
-      <h3>🛡️ Moderation</h3>
-
-      <p>
-        Advanced moderation and anti-raid systems
-        to keep your server safe and organized.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>💰 Economy</h3>
-
-      <p>
-        Interactive economy, daily rewards,
-        gambling games and customizable shop systems.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🎵 Music</h3>
-
-      <p>
-        High quality music playback with
-        Spotify, YouTube and SoundCloud support.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🎫 Ticket</h3>
-
-      <p>
-        Professional support system with
-        transcripts, ratings and staff management.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    © 2026 SpalshWare • Powered by Discord.js v14
-  </div>
+<a class="btn secondary"
+href="https://keremsg.github.io/spalshware-site/privacy.html">
+🔒 Privacy Policy
+</a>
 
 </div>
+
+</div>
+
+<div class="preview">
+
+<div class="command">
+<h3>/setup</h3>
+<p>Automatically create categories, channels, permissions and roles.</p>
+</div>
+
+<div class="command">
+<h3>/ticket</h3>
+<p>Professional support system with transcripts and feedback.</p>
+</div>
+
+<div class="command">
+<h3>/play</h3>
+<p>Play music from Spotify, YouTube and SoundCloud.</p>
+</div>
+
+<div class="command">
+<h3>/economy</h3>
+<p>Daily rewards, gambling games and custom shops.</p>
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<span>Commands</span>
+</div>
+
+<div class="stat">
+<h2>24/7</h2>
+<span>Online</span>
+</div>
+
+<div class="stat">
+<h2>v14</h2>
+<span>discord.js</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>✨ Features</h2>
+
+<p>
+Everything your Discord server needs in one powerful bot.
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>🛡️ Moderation</h3>
+<p>
+Advanced moderation, anti-raid and security systems
+to keep your server safe and organized.
+</p>
+</div>
+
+<div class="feature">
+<h3>💰 Economy</h3>
+<p>
+Interactive economy with gambling games,
+shops and customizable currency systems.
+</p>
+</div>
+
+<div class="feature">
+<h3>🎵 Music</h3>
+<p>
+High quality music playback with Spotify,
+YouTube and SoundCloud support.
+</p>
+</div>
+
+<div class="feature">
+<h3>🎫 Tickets</h3>
+<p>
+Modern support ticket system with transcripts,
+ratings and staff management.
+</p>
+</div>
+
+<div class="feature">
+<h3>📊 Levels</h3>
+<p>
+XP rewards, rank cards,
+leaderboards and level rewards.
+</p>
+</div>
+
+<div class="feature">
+<h3>⚡ Automation</h3>
+<p>
+Auto moderation, welcome systems,
+reaction roles and scheduled tasks.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 SpalshWare • Professional Discord Community Management
+
+</footer>
 
 </body>
 </html>
