@@ -1,93 +1,113 @@
-````md id="8m4l1p"
+O normal 😄
+Çünkü GitHub README dosyasını HTML site gibi değil Markdown olarak gösteriyor.
+
+Senin yaptığın README tasarımı aslında kötü değil, sadece GitHub kendi stilinde render ediyor.
+
+Şunu yap:
+
+## README için daha premium görünüm
+
+README içindeki eski her şeyi sil ve bunu yapıştır:
+
+````md id="7b9w0x"
 <div align="center">
 
-# 🤖 SpalshWare
+<img width="140" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
+
+# SpalshWare
 
 ### Modern Discord Community Management Bot
 
-<img src="https://img.shields.io/badge/discord.js-v14-5865F2?style=for-the-badge&logo=discord">
-<img src="https://img.shields.io/badge/Node.js-20+-3C873A?style=for-the-badge&logo=node.js">
-<img src="https://img.shields.io/badge/SQLite-better--sqlite3-003B57?style=for-the-badge">
+<p>
+  Moderation • Economy • Music • Tickets • Security • Automation
+</p>
 
 <br>
 
-SpalshWare is a professional all-in-one Discord bot featuring moderation, economy, music, ticket systems, security, automation and entertainment tools.
+<a href="https://bit.ly/4tMgcWp">
+  <img src="https://img.shields.io/badge/Invite%20Bot-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+</a>
 
-[➕ Invite Bot](https://bit.ly/4tMgcWp) •
-[🔒 Privacy](https://keremsg.github.io/spalshware-site/privacy.html) •
-[📜 Terms](https://keremsg.github.io/spalshware-site/terms.html)
+<a href="https://keremsg.github.io/spalshware-site/privacy.html">
+  <img src="https://img.shields.io/badge/Privacy%20Policy-black?style=for-the-badge">
+</a>
+
+<a href="https://keremsg.github.io/spalshware-site/terms.html">
+  <img src="https://img.shields.io/badge/Terms%20Of%20Service-8b5cf6?style=for-the-badge">
+</a>
+
+<br><br>
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Inter&size=28&duration=3000&color=5865F2&center=true&vCenter=true&width=700&lines=Professional+Discord+Bot;Advanced+Moderation+System;Economy+%26+Level+System;Music+%26+Ticket+Features;Modern+Community+Management">
 
 </div>
 
 ---
 
-# ✨ Features
+# Features
 
 ## 🛡️ Moderation
 - Ban / Kick / Timeout / Warn
 - Anti Spam & Anti Raid
+- Advanced Logging
 - Auto Moderation
-- Advanced Logging System
 
 ## 💰 Economy
 - Daily Rewards
 - Gambling Games
 - Shop System
-- User Inventory
+- Inventory System
 
 ## 🎵 Music
 - Spotify Support
 - YouTube Playback
-- High Quality Audio
 - Queue System
+- High Quality Audio
 
 ## 🎫 Ticket System
-- Category Support
+- Support Tickets
 - Transcript Logs
-- Staff Management
 - Feedback System
+- Staff Management
 
 ## 📊 Level System
 - XP Rewards
 - Rank Cards
-- Leaderboards
 - Role Rewards
-
-## 👋 Community
-- Welcome Messages
-- Reaction Roles
-- AFK System
-- Confession System
+- Leaderboards
 
 ---
 
-# ⚡ Tech Stack
+# Tech Stack
 
 ```bash
-Node.js
 discord.js v14
+Node.js
 better-sqlite3
 discord-player
+SQLite
 ````
 
 ---
 
-# 🚀 Setup
+# Setup
 
 ```bash
-git clone https://github.com/keremsg/spalshware-site.git
+git clone https://github.com/Keremsg/spalshware-site.git
+
 cd spalshware-site
+
 npm install
 ```
 
-Create a `.env` file:
+Create `.env`
 
 ```env
-TOKEN=YOUR_BOT_TOKEN
+TOKEN=YOUR_TOKEN
 CLIENT_ID=YOUR_CLIENT_ID
 ```
 
-Start the bot:
+Start Bot
 
 ```bash
 node .
@@ -95,19 +115,13 @@ node .
 
 ---
 
-# 📸 Preview
-
-> Modern UI • Powerful Systems • Fast Performance
-
----
-
-# ❤️ Support
-
-If you like SpalshWare, consider inviting it to your server and starring the repository.
-
 <div align="center">
 
-### 🌌 SpalshWare © 2026
+## 🌌 SpalshWare © 2026
+
+Professional • Fast • Secure
 
 </div>
 ```
+
+Bu GitHub’da çok daha profesyonel görünür 🔥
