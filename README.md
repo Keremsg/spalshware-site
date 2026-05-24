@@ -1,15 +1,3 @@
-O normal 😄
-Çünkü GitHub README dosyasını HTML site gibi değil Markdown olarak gösteriyor.
-
-Senin yaptığın README tasarımı aslında kötü değil, sadece GitHub kendi stilinde render ediyor.
-
-Şunu yap:
-
-## README için daha premium görünüm
-
-README içindeki eski her şeyi sil ve bunu yapıştır:
-
-````md id="7b9w0x"
 <div align="center">
 
 <img width="140" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
@@ -86,42 +74,3 @@ Node.js
 better-sqlite3
 discord-player
 SQLite
-````
-
----
-
-# Setup
-
-```bash
-git clone https://github.com/Keremsg/spalshware-site.git
-
-cd spalshware-site
-
-npm install
-```
-
-Create `.env`
-
-```env
-TOKEN=YOUR_TOKEN
-CLIENT_ID=YOUR_CLIENT_ID
-```
-
-Start Bot
-
-```bash
-node .
-```
-
----
-
-<div align="center">
-
-## 🌌 SpalshWare © 2026
-
-Professional • Fast • Secure
-
-</div>
-```
-
-Bu GitHub’da çok daha profesyonel görünür 🔥
