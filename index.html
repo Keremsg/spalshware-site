@@ -1,27 +1,344 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-  <title>SpalshWare</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>SpalshWare</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#0b1020;
+  overflow-x:hidden;
+  color:white;
+}
+
+/* Animated Background */
+
+.bg{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  overflow:hidden;
+}
+
+.glow{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:.35;
+  animation:move 14s infinite ease-in-out;
+}
+
+.glow:nth-child(1){
+  width:400px;
+  height:400px;
+  background:#5865F2;
+  top:-120px;
+  left:-120px;
+}
+
+.glow:nth-child(2){
+  width:350px;
+  height:350px;
+  background:#8b5cf6;
+  bottom:-120px;
+  right:-120px;
+  animation-delay:3s;
+}
+
+.glow:nth-child(3){
+  width:250px;
+  height:250px;
+  background:#00d4ff;
+  top:40%;
+  left:60%;
+  animation-delay:6s;
+}
+
+@keyframes move{
+  0%{
+    transform:translate(0,0);
+  }
+  50%{
+    transform:translate(30px,-40px);
+  }
+  100%{
+    transform:translate(0,0);
+  }
+}
+
+/* Main */
+
+.container{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:80px 25px;
+}
+
+.hero{
+  text-align:center;
+  padding:100px 20px;
+  border-radius:35px;
+
+  background:rgba(22,27,34,.7);
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(25px);
+
+  box-shadow:
+    0 0 50px rgba(0,0,0,.4),
+    inset 0 0 1px rgba(255,255,255,.2);
+
+  animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#5865F2,#8b5cf6);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:25px;
+  box-shadow:0 0 25px rgba(88,101,242,.4);
+}
+
+.title{
+  font-size:80px;
+  font-weight:800;
+  line-height:1;
+
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #a5b4fc,
+    #c084fc
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  margin-bottom:25px;
+}
+
+.subtitle{
+  max-width:750px;
+  margin:auto;
+  color:#9ca3af;
+  font-size:20px;
+  line-height:1.8;
+}
+
+.buttons{
+  margin-top:40px;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 28px;
+  border-radius:16px;
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn-primary{
+  background:linear-gradient(90deg,#5865F2,#8b5cf6);
+  box-shadow:0 0 25px rgba(88,101,242,.4);
+}
+
+.btn-secondary{
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+/* Features */
+
+.features{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:rgba(22,27,34,.7);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:25px;
+  padding:30px;
+  transition:.3s;
+  backdrop-filter:blur(20px);
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#8b5cf6;
+}
+
+.card h3{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#9ca3af;
+  line-height:1.7;
+}
+
+/* Footer */
+
+.footer{
+  margin-top:70px;
+  text-align:center;
+  color:#6b7280;
+  font-size:15px;
+}
+
+@media(max-width:800px){
+
+  .title{
+    font-size:55px;
+  }
+
+  .subtitle{
+    font-size:17px;
+  }
+
+}
+
+</style>
 </head>
+<body>
 
-<body style="background:#0d1117;color:white;text-align:center;padding-top:100px;font-family:Arial;">
+<div class="bg">
+  <div class="glow"></div>
+  <div class="glow"></div>
+  <div class="glow"></div>
+</div>
 
-<h1>🤖 SpalshWare</h1>
+<div class="container">
 
-<p>Modern Discord Community Management Bot</p>
+  <div class="hero">
 
-<a href="https://bit.ly/4tMgcWp"
-style="
-background:#5865F2;
-padding:15px 25px;
-border-radius:12px;
-color:white;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-">
-Invite Bot
-</a>
+    <div class="badge">
+      🤖 Professional Discord Bot
+    </div>
+
+    <div class="title">
+      SpalshWare
+    </div>
+
+    <div class="subtitle">
+      Modern Discord community management bot with
+      moderation, economy, music, ticket systems,
+      security, automation and entertainment features
+      all in one powerful platform.
+    </div>
+
+    <div class="buttons">
+
+      <a class="btn btn-primary"
+      href="https://bit.ly/4tMgcWp">
+
+        ➕ Invite Bot
+
+      </a>
+
+      <a class="btn btn-secondary"
+      href="/terms.html">
+
+        📜 Terms
+
+      </a>
+
+      <a class="btn btn-secondary"
+      href="/privacy.html">
+
+        🔒 Privacy
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="features">
+
+    <div class="card">
+      <h3>🛡️ Moderation</h3>
+
+      <p>
+        Advanced moderation and anti-raid systems
+        to keep your server safe and organized.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Economy</h3>
+
+      <p>
+        Interactive economy, daily rewards,
+        gambling games and customizable shop systems.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🎵 Music</h3>
+
+      <p>
+        High quality music playback with
+        Spotify, YouTube and SoundCloud support.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🎫 Ticket</h3>
+
+      <p>
+        Professional support system with
+        transcripts, ratings and staff management.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2026 SpalshWare • Powered by Discord.js v14
+  </div>
+
+</div>
 
 </body>
 </html>
