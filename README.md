@@ -16,11 +16,11 @@ Moderation • Economy • Music • Tickets • Security • Automation
   <img src="https://img.shields.io/badge/Invite%20Bot-5865F2?style=for-the-badge&logo=discord&logoColor=white">
 </a>
 
-<a href="https://keremsg.github.io/spalshware-site/privacy.html">
+<a href="https://keremsg.github.io/Spalshware/privacy.html">
   <img src="https://img.shields.io/badge/Privacy%20Policy-0d1117?style=for-the-badge">
 </a>
 
-<a href="https://keremsg.github.io/spalshware-site/terms.html">
+<a href="https://keremsg.github.io/Spalshware/terms.html">
   <img src="https://img.shields.io/badge/Terms%20Of%20Service-8b5cf6?style=for-the-badge">
 </a>
 
